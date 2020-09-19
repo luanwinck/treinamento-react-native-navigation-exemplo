@@ -7,7 +7,6 @@ export function HomeScreen({ navigation, route }) {
   const [count, setCount] = useState(0)
   const isFocused = useIsFocused()
 
-
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
   //     alert('Foi focado!')
@@ -45,7 +44,7 @@ export function HomeScreen({ navigation, route }) {
         </TouchableOpacity>
       </View>
       <Button onPress={() => navigation.navigate('Detail', { count })} title='Go to Detail Screen' />
-      <Button onPress={() => navigation.jumpTo('Settings', { count })} title='Go to Player Screen' />
+      <Button onPress={() => navigation.jumpTo('Settings', { count })} title='Go to Settings Screen' />
       <Button onPress={() => navigation.openDrawer()} title='Open Drawer' />
     </View>
   );

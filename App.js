@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { RootNavigation } from './src/navigation/root.navigation';
 import { DrawerNavigation } from './src/navigation/drawer.navigation';
 import { TabNavigation } from './src/navigation/tab.navigation';
+import { ModalNavigation } from './src/navigation/modal.navigation';
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
       <SafeAreaView style={{ backgroundColor: 'black' }} />
       <SafeAreaView style={{ flex: 1, backgroundColor: '#ffd700' }}>
         <NavigationContainer>
-          <DrawerNavigation />
+          <ModalNavigation />
         </NavigationContainer>
       </SafeAreaView>
     </>
