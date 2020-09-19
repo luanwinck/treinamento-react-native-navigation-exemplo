@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, BackHandler } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
 
-export function HomeScreen({ navigation }) {
+export function HomeScreen({ navigation, route }) {
   const [count, setCount] = useState(0)
   const isFocused = useIsFocused()
+
 
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
@@ -18,6 +19,14 @@ export function HomeScreen({ navigation }) {
   useEffect(() => {
     if (isFocused) {
       setCount(0)
+
+      BackHandler.addEventListener('hardwareBackPress', () => {
+        alert('teste')
+
+        return true
+      })
+
+      return BackHandler.removeEventListener('hardwareBackPress')
     }
   }, [isFocused])
 
@@ -36,6 +45,7 @@ export function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       <Button onPress={() => navigation.navigate('Detail', { count })} title='Go to Detail Screen' />
+      <Button onPress={() => navigation.jumpTo('Settings', { count })} title='Go to Player Screen' />
       <Button onPress={() => navigation.openDrawer()} title='Open Drawer' />
     </View>
   );

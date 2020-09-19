@@ -6,7 +6,7 @@ import { ListIcon, PlayIcon } from '../../assets/icons';
 
 const ICONS = {
 	'Home': ListIcon, 
-	'Player': PlayIcon, 
+	'Settings': PlayIcon, 
 }
 
 export const BottomTab = ({
@@ -18,7 +18,7 @@ export const BottomTab = ({
 			{state.routes.map((route, index) => {
 				const isFocused = state.index === index;
 
-				const color = isFocused ? 'white' : 'rgba(255,255,255,0.5)';
+				const color = isFocused ? 'black' : 'rgba(0,0,0,0.5)';
 
 				const Icon = ICONS[route.name]
 

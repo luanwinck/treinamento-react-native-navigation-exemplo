@@ -13,9 +13,9 @@ import { TabNavigation } from './src/navigation/tab.navigation';
 export default function App() {
   return (
     <>
-      <StatusBar style='dark' />
-      <SafeAreaView/>
-      <SafeAreaView style={{ flex: 1, backgroundColor: 'blue' }}>
+      <StatusBar style='light' />
+      <SafeAreaView style={{ backgroundColor: 'black' }} />
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#ffd700' }}>
         <NavigationContainer>
           <DrawerNavigation />
         </NavigationContainer>

@@ -7,8 +7,26 @@ const Stack = createStackNavigator();
 
 export const RootNavigation = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        // Disable Header
+        headerShown: true,
+
+        // Style Header
+        headerStyle: {
+          backgroundColor: '#000000'
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold'
+        },
+        headerTintColor: '#ffd700',
+        headerBackTitleVisible: false,
+
+        // Prevent on Drawer
+        gestureEnabled: false,
+      }}
+    >
+      <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Dashboard' }} />
       <Stack.Screen name="Detail" component={DeatilScreen} />
     </Stack.Navigator>
   )
